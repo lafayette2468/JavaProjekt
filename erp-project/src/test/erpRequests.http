@@ -1,0 +1,91 @@
+
+###PostNewCustomer
+
+POST http://localhost:8080/api/customers
+Content-Type: application/json
+
+{
+  "name": "BBB Kft.",
+  "taxNumber": "",
+  "zipCode": "1111",
+  "city": "Budapest",
+  "address": "Fő u 1."
+}
+
+### GetAllCustomers
+GET http://localhost:8080/api/customers
+Accept: application/json
+
+### GetCustomerWithOrdersAndInvoices
+GET http://localhost:8080/api/customers/1
+Accept: application/json
+
+###UpdateCustomer
+PUT http://localhost:8080/api/customers/1
+Content-Type: application/json
+
+{
+  "name": "CCC Kft.",
+  "taxNumber": "1234567891",
+  "zipCode": "1234",
+  "city": "Budapest",
+  "address": "Fő u 1."
+}
+
+###CreateNewOrder
+POST http://localhost:8080/api/orders/1
+Content-Type: application/json
+
+{
+  "orderNumber": "2023/00023",
+  "orderDate": "2023-04-11",
+  "itemDescription": "kék toll",
+  "netUnitPrice": 300,
+  "quantity": 50
+}
+
+###DeleteOrder
+DELETE http://localhost:8080/api/orders/1
+Content-Type: application/json
+
+###UpdateOrder
+PUT http://localhost:8080/api/orders/1
+Content-Type: application/json
+
+{
+  "orderNumber": "2023/00023",
+  "orderDate": "2023-04-12",
+  "itemDescription": "piros toll",
+  "netUnitPrice": 300,
+  "quantity": 50
+}
+
+###GetUninvoiced orders
+GET http://localhost:8080/api/orders
+Accept: application/json
+
+###GetAllInvoices
+GET http://localhost:8080/api/invoices
+Accept: application/json
+
+
+###PostNewInvoice
+POST http://localhost:8080/api/invoices/1
+Content-Type: application/json
+
+{
+  "invoiceNumber": "2023/i/0002",
+  "vat": "VAT_27",
+  "methodOfPayment": "CASH",
+  "invoiceDate": "2023-03-03",
+  "fulfilmentDate": "2023-03-03",
+  "dueDate": "2023-03-03"
+}
+
+###CreateCreditNote
+POST http://localhost:8080/api/invoices/credit-note/1
+Content-Type: application/json
+
+
+
+
